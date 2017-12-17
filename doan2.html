@@ -1,1 +1,65 @@
-"# Trong-Nghia" 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Do AN 2</title>
+    <script>
+function GetSwitchState() {
+                        nocache = "&nocache=" + Math.random() * 1000000;
+                        var request = new XMLHttpRequest();
+                        request.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                        if (this.status == 200) {
+                        if (this.responseText != null) {
+                        document.getElementById("switch_txt").innerHTML = this.responseText;
+                        }}}}
+                        request.open("GET", "ajax_switch" + nocache, true);
+                        request.send(null);
+                        setTimeout('GetSwitchState()', 500);
+                        }
+    </script>
+    <h1 align="center" style="font-size:large">Trường Đại Học Công Nghiệp TP.Hồ Chí Minh</h1>
+</head>
+<body onload="GetSwitchState()">
+        <style type="text/css">
+            div{ border: 0px solid red;} tag1 {height: 30px; position: relative; top: 40px; left: 50px; width: 150px;} tag2 {height: 30px; width: 150px;}
+        </style>
+        <p align="center" style="font-size:medium">Khoa Công Nghệ Điện Tử-Bộ Môn Điện Tử Tự Động</p>
+        <p align="center" style="font-size:medium"> <strong>Báo cáo đồ án 2B </strong></p>
+        <p align=center> <i style="font-size:medium ; color:blue ">Đề tài: </i> <strong style=\"font-size:large; color:green\">ỨNG DỤNG BOARD INTEL GALILEO TRONG ĐIỀU KHIỂN VÀ GIÁM SÁT THIẾT BỊ QUA MẠNG INTERNET TOÀN CẦU</strong> </p>
+        <table onload="GetSwitchState()">
+        </table>
+    <table border="1" width="100%">
+        <tr>
+            <td colspan="3" align="center">
+                <input align="center" type=button style="height:50px; width:100px; background-color:green " value='BẬT ĐÈN' onclick ="GetSwitchState()" onmousedown=location.href ='/?ON_LAMP'>
+                <br />
+                <input align="center" type=button style="height:50px; width:100px; background-color:red " value='TẮT ĐÈN' onclick ="GetSwitchState()" onmousedown=location.href ='/?OFF_LAMP'>
+            </td>
+            <td align="center">
+                <div id="hinhvuong1">
+                    <p align="center">TRẠNG THÁI ĐÈN </p>
+                    <br />
+                    <p align="center">ĐÈN TẮT</p>
+            </td>"
+            <td align="center">
+                <input align="center" type=button style="height:50px; width:100px; background-color:green " value='BẬT QUẠT' onclick ="GetSwitchState()" onmousedown=location.href ='/?ON_DC'>
+                <br />
+                <input align="center" type=button style="height:50px; width:100px; background-color:red " value='TẮT QUẠT' onclick ="GetSwitchState()" onmousedown=location.href ='/?OFF_DC'>
+            </td>
+            <td align="center">
+                <p align="center">TRẠNG THÁI QUẠT</p>
+                <br />
+                <p align="center">QUẠT DỪNG</p>
+            </td>
+            <td align="center">
+                <input align="center" type=button style="height:50px; width:200px; background-color:#6F9 " value='CHẾ ĐỘ ĐÈN/QUẠT' onclick ="GetSwitchState()" onmousedown=location.href ='/?MODE'>
+                <br />
+                <p align="center">THỦ CÔNG</p>
+            </td>
+            <td align="center">
+                <p align ="center"> NHIỆT ĐỘ HIỆN TẠI (oC)</p>
+            </td>
+        </tr>
+    </table>
+    </body>
+</html>
